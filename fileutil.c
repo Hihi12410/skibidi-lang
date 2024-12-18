@@ -1,11 +1,11 @@
 #include "fileutil.h"
 
-FILE* openFile(const char* path, const char mode)
+FILE* openFile(const char* path, const char* mode)
 {
 	FILE* file = fopen(path, mode);
 
-	if (file == NULL) { perror("Couldn't open file(s)!"); handleError(); }
-	return &file;
+	if (file == NULL) { perror("Couldn't open file(s)!"); } //handleError(); }
+	return file;
 }
 
 int closeFile(FILE* file)
@@ -15,7 +15,7 @@ int closeFile(FILE* file)
 	int res = fclose(file);
 
 	if (res == EOF) { perror("Couldn't close file(s)!"); handleError();}
-	gcAdd(res);
+	gcAdd(&res);
 	return res;
 }
 
@@ -50,7 +50,7 @@ char* readFile(FILE* file)
 	expo[len] = '\0';
 	
 	gcAdd(expo);
-	gcAdd(&len);
+	gcAdd(len);
 	free(res);
 	
 	return expo;

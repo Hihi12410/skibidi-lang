@@ -21,6 +21,9 @@
     <ClCompile Include="fileutil.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="gc.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fileutil.h">

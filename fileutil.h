@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "gc.h"
-
 #ifndef FILEMODES
 #define FILEMODES
 
@@ -23,10 +22,10 @@
 
 #endif // !FILEMODES
 
-FILE* openFile(const char* path,const char mode);
+FILE* openFile(const char path[], const char mode);
 int closeFile(FILE* file);
 
-FILE* readFile(FILE* file);
+char* readFile(FILE* file);
 int writeFile(FILE* file, char* dat);
 
 void fileCheck(FILE* file);
